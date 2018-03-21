@@ -171,6 +171,51 @@ public class AP1 {
 			return true;
 		return false;
 	}
+	
+	// http://codingbat.com/prob/p139677
+	public int matchUp(String[] a, String[] b) {
+		  int counter = 0;
+		  for(int i = 0; i < a.length; i++) {
+			  if(a[i].length()>0 && b[i].length()>0 && a[i].charAt(0) == b[i].charAt(0))
+				  ++counter;
+		  }
+		  return counter;
+	}
+	
+	
+	// http://codingbat.com/prob/p180365
+	public int scoreUp(String[] key, String[] answers) {
+		int score = 0;
+		
+		for(int i = 0; i < key.length; i++) {
+			if(key[i].equals(answers[i]))
+				score += 4;
+			else if(!answers[i].equals("?"))
+				score--;
+		}
+		return score;
+	}
+
+	
+	// http://codingbat.com/prob/p121236
+	public String[] wordsWithout(String[] words, String target) {
+		int counter = 0;
+		
+		for(int i = 0; i < words.length; i++) {
+			if(!words[i].equals(target))
+				++counter;
+		}
+		
+		String [] newWords = new String[ counter];
+		
+		for(int i = 0, j = 0; i < words.length && j < counter; i++) {
+			if(!words[i].equals(target)) {
+				newWords[j] = words[i];
+				++j;
+			}
+		}
+		return newWords;
+	}
 
 
 	
