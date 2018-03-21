@@ -1,4 +1,4 @@
-package de.livio.codingbat;
+package de.liviob.codingbat;
 
 public class Array3 {
 	

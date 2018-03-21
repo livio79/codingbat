@@ -125,7 +125,7 @@ public class AP1 {
 	
 	// http://codingbat.com/prob/p165941
 	public boolean dividesSelf(int n) {
-	    int tmp = n;
+		int tmp = n;
 	    if(n%10 == 0)
 	    	return false;
 	    while(n > 0) {
@@ -135,12 +135,53 @@ public class AP1 {
 	        }
 	    return true;
 	}
+	
+	//http://codingbat.com/prob/p134174
+	public int[] copyEvens(int[] nums, int count) {
+		count = count > nums.length ? nums.length : count; 
+		int [] even = new int[count]; 
+		
+		  for(int i=0, counter=0; i<nums.length && counter<count; i++) { 
+			  if(  nums[i]%2==0) {
+				even[counter]= nums[i];
+				++counter;
+			  }
+		  }
+		  return even;
+	}
+	
+	//http://codingbat.com/prob/p130124
+	public int[] copyEndy(int[] nums, int count) {
+		int [] endy = new int [count];
+		
+		for(int i = 0, counter = 0; i< nums.length && counter < count; i++) {
+			if(isEndy(nums[i])) {
+				endy[counter] = nums[i];
+				++counter;
+			}
+		}
+		return endy;	  
+	}
+	
+	/**return true if n is between 0 and 10 oder between 90 and 100 inclusive*/
+	public boolean isEndy(int n) {
+		if((n >= 0 && n <= 10) || (n >= 90 && n <= 100) )
+			return true;
+		return false;
+	}
 
 
 	
 	
 	public static void main(String[] args) {
 		AP1 a = new AP1();
+		int [] nums = {3, 2, 4, 5, 8};
+		
+		int [] even = a.copyEndy(nums, 2);
+		
+		
+		for(int t: even)
+			System.out.println(t);
 		
 	}
 
