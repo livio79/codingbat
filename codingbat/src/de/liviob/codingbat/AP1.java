@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+
+//http://codingbat.com/java/AP-1
 public class AP1 {
 	
 	// http://codingbat.com/prob/p146974

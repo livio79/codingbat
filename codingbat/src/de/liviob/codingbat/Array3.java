@@ -1,7 +1,7 @@
 package de.liviob.codingbat;
 
+// http://codingbat.com/java/Array-3
 public class Array3 {
-	
 	
 	public int maxMirror(int[] nums) {
 		int max = 0;
