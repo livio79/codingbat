@@ -217,19 +217,33 @@ public class AP1 {
 		return newWords;
 	}
 
+	
+	// http://codingbat.com/prob/p140485
+	public int scoresSpecial(int[] a, int[] b) {
+		return maxMultipleof10(a) + maxMultipleof10(b);
+	}
+	
+	/**return the largest value multiple of 10 in the array*/
+	public int maxMultipleof10(int [] arr) {
+		int maxArr = 0;
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] % 10 == 0 && arr[i] > maxArr)
+				maxArr = arr[i];
+		}
+		return maxArr;
+		
+	}
 
 	
 	
 	public static void main(String[] args) {
 		AP1 a = new AP1();
-		int [] nums = {3, 2, 4, 5, 8};
+		int [] nums = {3, 10, 2,2,50,10};
+		int [] nums2= {1,2,20,10,30,20,3};
+		 
+		int somma = a.scoresSpecial(nums, nums2);
 		
-		int [] even = a.copyEndy(nums, 2);
-		
-		
-		for(int t: even)
-			System.out.println(t);
-		
+		 System.out.println(somma);
 	}
 
 }
