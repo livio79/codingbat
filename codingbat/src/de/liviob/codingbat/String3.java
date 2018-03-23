@@ -78,14 +78,64 @@ public class String3 {
 		return countTriple;
 		
 	}
-
-	 
 	
-	public static void main(String[] args) {
-		String3 word = new String3();
-		 
-		String a = "abcde";
+	public int sumDigits(String str) {
+		int  sum = 0;
+		for(int i = 0; i < str.length(); i++) {
+			if(Character.isDigit(str.charAt(i)))
+					sum += Integer.parseInt(str.charAt(i) + "");
+		}
+		return sum;
+	}
+	
+	// http://codingbat.com/prob/p131516
+	public String sameEnds(String string) {
+		String sub = "";
+		  for(int i = 1; i < string.length()/2 +1; i++) {
+			  if(string.substring(0, i).equals( string.substring(string.length() - i))) { 
+				  sub = string.substring(0, i);
+				  }
+		  }
+		  return sub;
+	}
+	
+	
+	// http://codingbat.com/prob/p139411
+	public String mirrorEnds(String string) {
+		String sub = "";
+	   
+		  for(int i = 0; i < string.length(); i++) {
+			  if(string.charAt(i) == string.charAt(string.length()-i-1))
+				  sub += string.charAt(i);
+			  else
+				  return sub;
+		  }
+		  return   sub;  
+	}
+	
+	
+	// http://codingbat.com/prob/p179479
+	public int maxBlock(String str) {
+		 if(str.length() == 0) return 0;
 		
+		  int maxBlock = 1;
+		  int counter = 1;
+		  
+		  for(int i = 0; i < str.length() -1; i++) {
+			  if(str.charAt(i) == str.charAt(i + 1)) {
+				  ++counter;
+				  if(counter > maxBlock) 
+					  maxBlock = counter;
+			  } else {
+				  counter = 1;
+			  }
+		  }
+		  return maxBlock;
+	}
+
+  
+	public static void main(String[] args) {
+		 
 		 
 	}
 
