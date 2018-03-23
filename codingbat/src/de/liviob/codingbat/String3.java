@@ -46,14 +46,47 @@ public class String3 {
 		return counter;
 	}
 
+	// http://codingbat.com/prob/p198664
+	public boolean gHappy(String str) {
+		boolean gHappy = true;
+		
+		  for(int i = 0; i < str.length(); i++) {
+			 
+			  if(str.charAt(i) == 'g') {
+				  if(i !=0 && str.charAt(i - 1) == 'g')
+					  	gHappy = true;
+				  else if( i != str.length() - 1 && str.charAt(i + 1) == 'g')
+						gHappy = true;
+				  else 
+						return false;
+			  }
+		  }
+		  return gHappy;
+	}
+
+	
+	// http://codingbat.com/prob/p195714
+	public int countTriple(String str) {
+		if(str.length() < 3) return 0;
+		int countTriple = 0;
+		
+		for(int i = 0; i < str.length() - 2; i++) {
+			 if(str.charAt(i) == str.charAt(i + 1) && str.charAt(i + 1) == str.charAt(i + 2)) {
+				 countTriple++;
+			 }
+		}
+		return countTriple;
+		
+	}
+
 	 
 	
 	public static void main(String[] args) {
 		String3 word = new String3();
+		 
+		String a = "abcde";
 		
-		String remove = "llo";
-		String base	= 	"isisnotno7Notb";
-		System.out.println(word.equalIsNot(base));
+		 
 	}
 
 }
